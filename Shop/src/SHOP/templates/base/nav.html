@@ -1,0 +1,54 @@
+{% load static %}
+        <!-- navbar-inverse-->
+<nav class="navbar navbar-inverse topnav">
+        <!-- topnav -->
+    <div class="container topnav">
+
+            <!-- Logo and Caret -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{% url 'index' %}" class="navbar-brand">Repair Center</a>
+            </div>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+                    <!-- Locations -->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span> Locations <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">SomePlace</a></li>
+                          <li><a href="#">SomePlace</a></li>
+                          <li><a href="#">SomePlace</a></li>
+                          <li><a href="#">SomePlace</a></li>
+                        </ul>
+                    </li>
+                    <!-- Services -->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span> Services <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Microsoldering</a></li>
+                          <li><a href="#">Replacement etc</a></li>
+                          <li><a href="#">Cleaning virus etc</a></li>
+                          <li><a href="#">Broken stuff etc</a></li>
+                        </ul>
+                    </li>
+                    <!-- Contact -->
+                    <li><a href="{% url 'contact' %}"><span class="glyphicon glyphicon-comment"></span> Contact</a></li>
+                        <form class="navbar-form navbar-left" action="#">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Look for repair services" name="search">
+                            </div>
+                            <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+                        </form>
+                        <!-- Cart -->
+                    <li><a href="{% url 'cart' %}"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                        <!-- Login -->
+                    <li><a href="{% url 'user_log_in' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+
+    </div>
+</nav>

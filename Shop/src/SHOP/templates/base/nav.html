@@ -37,9 +37,10 @@
                     </li>
                     <!-- Contact -->
                     <li><a href="{% url 'contact' %}"><span class="glyphicon glyphicon-comment"></span> Contact</a></li>
-                        <form class="navbar-form navbar-left" action="#">
+                    <!-- search -->
+                        <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'merchandise_list_view' %}">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Look for repair services" name="search">
+                                <input type="text" class="form-control" placeholder="Look for repair services" name="q" value="{{ request.GET.q }}">
                             </div>
                             <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
                         </form>

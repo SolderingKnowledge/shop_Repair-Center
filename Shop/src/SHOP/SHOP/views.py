@@ -44,9 +44,8 @@ def user_sign_up(request):
         username = form.cleaned_data.get('username')
         email = form.cleaned_data.get('email')
         password = form.cleaned_data.get('password')
-        user.set_password(password)
         User.objects.create_user(username, email, password)
-
+        return render(request, 'index.html')
     return render(request, 'sign_up.html', context)
 
 

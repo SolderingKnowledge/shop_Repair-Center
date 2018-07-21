@@ -15,17 +15,26 @@
       
       
       {% block body %}
-       
-        <h2>{{ object_list}}</h2><br/>
 
 
-        
-        
+		<div class='container'>
+			<div class='row'>
+    			{% if merchandises %}
+        			{% for merchandise in merchandises %}
+		
+						{% include 'thumbnail.html' %} 
 
-        
-              
-      
-      
+					{% endfor %}
+      		
+				{% endif %}
+
+			</div>
+		</div>
+
+
+
+
+		
       {% endblock  %}
 
       

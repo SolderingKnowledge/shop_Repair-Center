@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+     
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    
+    </head>
+    
+    <body>
+
+      {% include 'base/nav.html' %}
+      
+      
+      {% block body %}
+       
+        
+		{{ object.title }}<br/>
+		{{ object.description }}<br/>
+		<!--{{ object_list.image.url }}</h2><br/>   this doesn't show  -->
+
+		<img src="{{ object.image.url }}" class="img-fluid" /> <!-- this shows -->
+
+
+        
+        
+
+        
+              
+      
+      
+      {% endblock  %}
+
+      
+
+
+
+
+    </body>
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{ object.title }}<br/>
+{{ object.description }}<br/>
+<!--{{ object_list.image.url }}</h2><br/>   this doesn't show  -->
+
+<img src="{{ object.image.url }}" class="img-fluid" /> <!-- this shows -->

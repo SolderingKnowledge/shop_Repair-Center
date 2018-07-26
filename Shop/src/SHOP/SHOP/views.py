@@ -2,13 +2,12 @@ from django.contrib.auth import authenticate, login, get_user_model
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render,redirect
 from .forms import ContactForm, LoginForm, SignUpForm
+from merchandise.models import Merchandise
+
 
 def index(request):
-    context = {
-        "title":"Home",
-        "content":" Hello this is homepage.",
-
-    }
+    queryset = Merchandise.objects.all()
+    context = {'merchandises': queryset}
    
     return render(request, "index.html", context)
 
@@ -44,7 +43,7 @@ def user_sign_up(request):
         username = form.cleaned_data.get('username')
         email = form.cleaned_data.get('email')
         password = form.cleaned_data.get('password')
-        User.objects.create_user(username, email, password)
+        new_user = User.objects.create_user(username, email, password)
         return render(request, 'index.html')
     return render(request, 'sign_up.html', context)
 

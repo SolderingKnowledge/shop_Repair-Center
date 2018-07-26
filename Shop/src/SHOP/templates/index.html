@@ -15,31 +15,26 @@
       
       
       {% block body %}
-       
-        
 
 
-        <div class='text-center'>
-            <h1>{{ title }}</h1>
-            <h1>Django project!</h1>
-            <h2>{{ object_list}}</h2><br/>
-                {{ object.title }}<br/>
-                {{ object.description }}<br/>
-            <h2>{{ object_list.image.url }}</h2><br/>
-        </div>
         <div class='container'>
           <div class='row'>
-            <div class='col'>
-                <p>{{ content }}</p>
-            </div>
+
+              {% for merchandise in merchandises %}
+      
+                  {% include 'thumbnail.html' %} 
+
+               {% endfor %}
+            
+
+
           </div>
         </div>
-        
 
-        
-              
-      
-      
+
+
+
+    
       {% endblock  %}
 
       
